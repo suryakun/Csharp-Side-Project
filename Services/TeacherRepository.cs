@@ -63,7 +63,7 @@ namespace Exercise.Repository
 
         public void TruncateTeacher()
         {
-            teacherData.Root.Descendants("teacher").Remove();
+            teacherData.Root.Elements("teacher").Remove();
             FlushingData(teacherData);
         }
 

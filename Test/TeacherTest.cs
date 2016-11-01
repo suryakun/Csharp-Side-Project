@@ -12,7 +12,7 @@ namespace Exercise {
     
 
     // Add new teacher 
-    public class TestAddNewTeacher 
+    public class TestAddNewTeacher
     {
         TeacherRepository repo;
         public TestAddNewTeacher()
@@ -71,7 +71,8 @@ namespace Exercise {
         }
     }
 
-    public class TestGetAllTeachers{
+    public class TestGetAllTeachers
+    {
         TeacherRepository repo;
         public TestGetAllTeachers()
         {

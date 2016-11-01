@@ -13,7 +13,7 @@ namespace Exercise {
     public class TestStudentGoToClass {
         [Fact]
         public void TestGoToClass() {
-            Student _student = new Student{id="001", name = "student one"};
+            Student _student = new Student{id="001", name = "student one", school_id="001"};
             string result = _student.goToClass();
             Assert.Equal(result, "I am going to class");
         }
@@ -31,7 +31,7 @@ namespace Exercise {
         [Fact]
         public void AddValidStudent()
         {
-            Student student = new Student{name = "mike", id="001"};
+            Student student = new Student{name = "mike", id="001", school_id="001"};
             repo.InsertStudent(student);
             XElement doc = repo.getStudentById(student.id);
             Assert.Equal((string)doc.Element("name"), student.name);
@@ -49,7 +49,7 @@ namespace Exercise {
         [Fact]
         public void DeleteValidStudent()
         {
-            Student student = new Student{name = "mike", id="001"};
+            Student student = new Student{name = "mike", id="001", school_id="001"};
             repo.InsertStudent(student);
             repo.DeleteStudent(student.id);
             int doc = repo.countStudentByName(student.name);
@@ -69,7 +69,7 @@ namespace Exercise {
         [Fact]
         public void TestUpdateValidStudent()
         {
-            Student student = new Student{name = "HEI", id="001"};
+            Student student = new Student{name = "HEI", id="001", school_id="001"};
             repo.InsertStudent(student);
             student.name = "Nub";
             repo.UpdateStudent(student);
@@ -78,7 +78,8 @@ namespace Exercise {
         }
     }
 
-    public class TestGetAllStudents{
+    public class TestGetAllStudents
+    {
         StudentRepository repo;
         public TestGetAllStudents()
         {
@@ -90,9 +91,9 @@ namespace Exercise {
         public void TestGetAllValidStudent()
         {
             List<Student> studentCollection = new List<Student>();
-            studentCollection.Add(new Student{name="one", id="001"});
-            studentCollection.Add(new Student{name="two", id="002"});
-            studentCollection.Add(new Student{name="three", id="003"});
+            studentCollection.Add(new Student{name="one", id="001", school_id="001"});
+            studentCollection.Add(new Student{name="two", id="002", school_id="001"});
+            studentCollection.Add(new Student{name="three", id="003", school_id="001"});
             foreach (var item in studentCollection)
             {
                 repo.InsertStudent(item);

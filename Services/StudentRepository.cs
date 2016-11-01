@@ -22,7 +22,7 @@ namespace Exercise.Repository
                 
                 foreach(var student in students)
                 {
-                    allStudents.Add(new Student{id = student.Element("id").Value, name = student.Element("name").Value});
+                    allStudents.Add(new Student{id = student.Element("id").Value, name = student.Element("name").Value, school_id=student.Element("school_id").Value});
                 }    
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace Exercise.Repository
 
         public void TruncateStudent()
         {
-            studentData.Root.Descendants("student").Remove();
+            studentData.Root.Elements("student").Remove();
             FlushingData(studentData);
         }
 

@@ -10,7 +10,7 @@ using System.Collections.Generic;
 namespace Exercise {
 
     // Add new school 
-    public class TestAddNewSchool 
+    public class TestAddNewSchool
     {
         SchoolRepository repo;
         public TestAddNewSchool()
@@ -69,7 +69,8 @@ namespace Exercise {
         }
     }
 
-    public class TestGetAllSchools{
+    public class TestGetAllSchools
+    {
         SchoolRepository repo;
         public TestGetAllSchools()
         {

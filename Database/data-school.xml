@@ -4,4 +4,8 @@
     <id>001</id>
     <name>Nub</name>
   </student>
+  <school>
+    <id>001</id>
+    <name>SMK</name>
+  </school>
 </root>

@@ -62,7 +62,7 @@ namespace Exercise.Repository
 
         public void TruncateSchool()
         {
-            schoolData.Root.Descendants("school").Remove();
+            schoolData.Root.Elements("school").Remove();
             FlushingData(schoolData);
         }
 
@@ -75,6 +75,12 @@ namespace Exercise.Repository
         public int countSchoolByName(string name)
         {
             int node = schoolData.Root.Elements("school").Where(i => (string)i.Element("name") == name).Count();
+            return node;
+        }
+
+        public int countSchoolById(string id)
+        {
+            int node = schoolData.Root.Elements("school").Where(i => (string)i.Element("id") == id).Count();
             return node;
         }
 
