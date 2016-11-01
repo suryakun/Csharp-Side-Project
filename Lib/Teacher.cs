@@ -1,5 +1,8 @@
 using System;
 using Exercise.Service;
+using System.Xml.Linq;
+using System.IO;
+using Exercise.Repository;
 
 namespace Exercise {
 
@@ -8,10 +11,11 @@ namespace Exercise {
         public string name { get; set; }
         public string school_id {get; set; }
 
-        public void goToClass() {
+        public string goToClass() {
             string result = this.GetStatemenGo();
-            Printer.Log(result);
+            return result;
         }
+        
     }
 
 }
