@@ -9,15 +9,7 @@ using System.Collections.Generic;
 
 namespace Exercise {
 
-    // as a teacher, I want to log something when go to class. so people will know it
-    public class TestTeacherGoToClass {
-        [Fact]
-        public void TestGoToClass() {
-            Teacher _teacher = new Teacher{id="001", name = "teacher one", school_id = "001"};
-            string result = _teacher.GetStatemenGo();
-            Assert.Equal(result, "I am going to class");
-        }
-    }
+    
 
     // Add new teacher 
     public class TestAddNewTeacher 
@@ -53,7 +45,7 @@ namespace Exercise {
             Teacher teacher = new Teacher{name = "hello", id="001", school_id="001"};
             repo.InsertTeacher(teacher);
             repo.DeleteTeacher(teacher.id);
-            int doc = repo.countTeacherById(teacher.id);
+            int doc = repo.countTeacherById(teacher.name);
             Assert.Equal(doc, 0);
         }
     }

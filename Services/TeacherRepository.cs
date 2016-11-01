@@ -73,9 +73,9 @@ namespace Exercise.Repository
             return node;
         }
 
-        public int countTeacherById(string id)
+        public int countTeacherById(string name)
         {
-            int node = teacherData.Root.Elements("teacher").Where(i => (string)i.Element("id") == id).Count();
+            int node = teacherData.Root.Elements("teacher").Where(i => (string)i.Element("name") == name).Count();
             return node;
         }
 

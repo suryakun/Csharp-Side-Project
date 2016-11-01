@@ -10,12 +10,10 @@ namespace Exercise {
         public string id { get; set; }
         public string name { get; set; }
         public string school_id {get; set; }
-
-        public string goToClass() {
-            string result = this.GetStatemenGo();
-            return result;
+        public string Explain()
+        {
+            return "Explanation begins";
         }
-        
     }
 
 }
